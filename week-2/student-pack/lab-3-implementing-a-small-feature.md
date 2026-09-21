@@ -1,0 +1,78 @@
+# Lab 3 — Implementing a Small Feature from a Plan
+
+**Works**: solo · **Needs**: Lab 2's `docs/ai/plan-<slug>.md` · work on branches, never your base branch
+
+You will implement the same feature twice — once from just its description, once from your plan through a skill that verifies every step — and let the two diffs argue about which approach you'd want in your repo's history.
+
+## Scenario
+
+The plan from Lab 2 is a contract. Today you find out what contracts are worth when they meet your actual codebase: two runs, two branches, one diff-off.
+
+## Part A — The planless baseline
+
+Create a branch `lab-3-baseline`. Fresh session. Give Claude **only the two-sentence feature description — not the plan**:
+
+> *implement <your feature, two sentences>*
+
+Let it finish. Record in the worksheet: which files it touched, what it added that nobody asked for, whether it ran anything to verify itself, what questions it asked you. Then return to your base branch and keep `lab-3-baseline` for the diff-off.
+
+💡 Short on time? Skip Part A and compare against the *baseline plan* evidence from Lab 2 instead. But the diff-off is the best part of this lab.
+
+## Part B — The plan-driven run
+
+Create a branch `lab-3-feature`. Install and run the skill:
+
+```
+cp -r skills/implement-plan <your-repo>/.claude/skills/
+```
+
+> *implement the plan in docs/ai/plan-<slug>.md*
+
+Expect: a preflight (branch, clean tree, baseline test run), then step-by-step execution — each step verified and committed. If reality disagrees with the plan, the skill must **stop, propose an amendment, and write it into the plan's Deviation log** after your approval. That log entry is the artifact to watch for.
+
+### Worksheet
+
+| Signal | Planless run | Plan-driven run |
+|--------|--------------|-----------------|
+| Files touched vs plan's file list |  |  |
+| Scope creep (things nobody asked for) |  |  |
+| Verification commands actually run |  |  |
+| Questions it asked you |  |  |
+| Deviations recorded in writing |  |  |
+
+Then the diff-off — run both and paste the stats:
+
+```
+git diff <base>..lab-3-baseline --stat
+git diff <base>..lab-3-feature --stat
+```
+
+## Part C — Open the hood
+
+1. This is the one skill in the pack that spawns **no subagents — on purpose**. Read `references/execution-rules.md`, section "Why this skill spawns no subagents". Restate the continuity argument in one sentence of your own.
+2. Map it to the **Single-agent** and **ReAct** rows of `reference-agentic-patterns.md` — every verify-by is the "observe" step made explicit.
+3. Read `references/when-stuck.md`. The deviation protocol's claim: *plans are contracts amended in writing, never silently abandoned.* Check your own Deviation log — is it honest? Zero entries on a non-trivial change deserves suspicion.
+
+## Part D — Extend the skill, then trip your own wire
+
+Add one stop condition to `implement-plan/SKILL.md`'s "Stop conditions" list:
+
+> - The change would modify a file matching `<pattern your team protects>` (e.g. `**/migrations/**`, `**/*.generated.*`).
+
+Then re-run the last plan step (or ask for a tiny in-scope tweak) and, mid-run, request a small addition that violates your new condition. Watch whether the skill stops and asks. You just live-tested a guardrail you wrote — remember from Lab 1 Part C that it's promised, not enforced. How much do you trust it now, and what would enforcement (a hook) add?
+
+## Part E — Reflect
+
+Answer in 2–3 sentences each (in class: discuss as a group first):
+
+1. Where did reality diverge from the plan, and does the Deviation log tell that story truthfully?
+2. Would a coordinator-with-subagents setup have implemented this better or worse than one continuous context? Argue from the `reference-agentic-patterns.md` rows, using today's evidence.
+3. Write your merge bar: what must be true of `lab-3-feature` before you'd open a PR? Keep it — labs 4 and 5 are how you'll get there.
+
+## What to submit
+
+- The worksheet + both `--stat` outputs
+- The Deviation log section of your plan (even if empty — say why)
+- Your new stop condition + what happened when you tripped it, and reflections
+
+💡 Keep `lab-3-feature` — labs 4 and 5 build on it. Delete `lab-3-baseline` after the diff-off.
