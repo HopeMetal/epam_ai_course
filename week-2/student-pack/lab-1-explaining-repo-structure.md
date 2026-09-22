@@ -16,13 +16,13 @@ Open a **fresh** Claude Code session in your repo's root and ask, exactly:
 
 Save the answer. Score it with the rubric:
 
-| Criterion (0–3 each) | 0 looks like | 3 looks like |
-|----------------------|--------------|--------------|
-| Entry points | Not mentioned | Every way execution starts, with file paths |
-| Layering & boundaries | Directory names restated | Dependency direction, with evidence files |
-| Where tests live | Not mentioned | Location, naming pattern, how to run them |
+| Criterion (0–3 each)          | 0 looks like                 | 3 looks like                                     |
+| ----------------------------- | ---------------------------- | ------------------------------------------------ |
+| Entry points                  | Not mentioned                | Every way execution starts, with file paths      |
+| Layering & boundaries         | Directory names restated     | Dependency direction, with evidence files        |
+| Where tests live              | Not mentioned                | Location, naming pattern, how to run them        |
 | "Where would I add feature X" | Unanswerable from the answer | A concrete location + an example file to imitate |
-| Build / run / test commands | Guessed or absent | Real commands, sourced from manifests or CI |
+| Build / run / test commands   | Guessed or absent            | Real commands, sourced from manifests or CI      |
 
 ⚠️ Baseline answers tend to be a prose `ls` — the directory names, restated confidently. Score what the answer would let a new teammate *do*, not how fluent it sounds.
 
@@ -39,9 +39,13 @@ In a **fresh** session, ask the same question, then let the skill run. It will w
 
 ### Worksheet
 
-| Criterion | Baseline /3 | Skill /3 | What the skill did differently |
-|-----------|-------------|----------|--------------------------------|
-|  |  |  |  |
+| Criterion                     | Baseline /3 | Skill /3 | What the skill did differently                                                              |
+| ----------------------------- | ----------- | -------- | ------------------------------------------------------------------------------------------- |
+| Entry points                  | 0           | 1        | Provided a place where primary interaction with the library can happen                      |
+| Layering & boundaries         | 1           | 3        | Provided a complete graph of the library's structure                                        |
+| Where tests live              | 1           | 2        | Only specified where tests live and how to run them, but nothing about naming patterns      |
+| "Where would I add feature X" | 1           | 3        | Provided a table of example features, where to add them and what files to use as an example |
+| Build / run / test commands   | 0           | 3        | Provides full table of build / run / test commands with sources of truth                    |
 
 ## Part C — Open the hood
 
