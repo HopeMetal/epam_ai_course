@@ -130,3 +130,29 @@ Parallel run clarified a few things but mostly did the same work, and used more 
 
 3
 Adding .slnx as a file extension for C# solution files.
+
+# Run with repo-map.md and CLAUDE.md
+
+Usage results:
+
+  Total cost:            $0.1710
+  Total duration (API):  30s       
+  Total duration (wall): 1m 43s
+  Total code changes:    0 lines added, 0 lines removed
+  Usage by model:
+      claude-haiku-4-5:  895 input, 9 output, 0 cache read, 0 cache write ($0.0009)
+     claude-sonnet-4-6:  8 input, 2.2k output, 122.7k cache read, 16.7k cache write ($0.1701)
+  Prompt cache (main):   5 requests · 88% of input tokens from cache · 1 miss (last 1m 23s ago, 5.7k tokens re-cached) · warm (1h TTL, last
+  activity 1m 7s ago)
+
+Attempt with repo-map.md mentioned in CLAUDE.md:
+
+  Total cost:            $0.1008
+  Total duration (API):  15s       
+  Total duration (wall): 57s
+  Total code changes:    0 lines added, 0 lines removed
+  Usage by model:
+      claude-haiku-4-5:  893 input, 9 output, 0 cache read, 0 cache write ($0.0009)
+     claude-sonnet-4-6:  4 input, 814 output, 39.3k cache read, 12.7k cache write ($0.0999)
+  Prompt cache (main):   2 requests · 76% of input tokens from cache · 1 miss (last 39s ago, 7.9k tokens re-cached) · warm (1h TTL, last
+  activity 39s ago)

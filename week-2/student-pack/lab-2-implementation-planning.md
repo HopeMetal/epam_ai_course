@@ -28,13 +28,17 @@ Fresh session, same two-sentence feature. Expect the skill to behave differently
 
 ### Worksheet
 
-| Criterion (0–3 each) | Baseline plan | Skill plan | Evidence |
-|----------------------|---------------|------------|----------|
-| Grounding — steps name real paths |  |  |  |
-| Verifiable — every step has a verify-by |  |  |  |
-| Risks & unknowns made explicit |  |  |  |
-| Test plan names behaviors |  |  |  |
-| Out of scope stated |  |  |  |
+| Criterion (0–3 each)                    | Baseline plan | Skill plan | Evidence |
+| --------------------------------------- | ------------- | ---------- | -------- |
+| Grounding — steps name real paths       | 3             | 3          |          |
+| Verifiable — every step has a verify-by | 0             | 3          |          |
+| Risks & unknowns made explicit          | 0             | 3          |          |
+| Test plan names behaviors               | 3             | 3          |          |
+| Out of scope stated                     | 0             | 3          |          |
+
+Confirm if initial examination of feature is correct.
+List of decisions to verify assumptions or suggest a different approach.
+Asking if the modified decisions are correct before writing plan.
 
 Below the table, list every question the skill asked **you**. That list is the plan's real output — the baseline asked you nothing.
 
