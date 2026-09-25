@@ -26,25 +26,46 @@ Create a branch `lab-3-feature`. Install and run the skill:
 cp -r skills/implement-plan <your-repo>/.claude/skills/
 ```
 
-> *implement the plan in docs/ai/plan-<slug>.md*
+> *implement the plan in docs/ai/plan-\<slug>.md*
 
 Expect: a preflight (branch, clean tree, baseline test run), then step-by-step execution — each step verified and committed. If reality disagrees with the plan, the skill must **stop, propose an amendment, and write it into the plan's Deviation log** after your approval. That log entry is the artifact to watch for.
 
 ### Worksheet
 
-| Signal | Planless run | Plan-driven run |
-|--------|--------------|-----------------|
-| Files touched vs plan's file list |  |  |
-| Scope creep (things nobody asked for) |  |  |
-| Verification commands actually run |  |  |
-| Questions it asked you |  |  |
-| Deviations recorded in writing |  |  |
+| Signal                                | Planless run                                                                                                                                                                                                                                                                             | Plan-driven run                                                                                                                                                                                                      |
+| ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Files touched vs plan's file list     | src/System.CommandLine/Parsing/JsonArgumentPreprocessor.cs, **src/System.CommandLine/ParserConfiguration.cs**, src/System.CommandLine/Parsing/CommandLineParser.cs,  Directory.Packages.props + System.CommandLine.csproj, src/System.CommandLine.Tests/JsonArgumentPreprocessorTests.cs | JsonArgsPreprocessor.cs (new),  System.CommandLine.csproj, Directory.Packages.props, CommandLineParser.cs, ParserTests.JsonInput.cs (new)                                                                            |
+| Scope creep (things nobody asked for) | Tests were added which was not asked for in the original feature prompt.                                                                                                                                                                                                                 | None                                                                                                                                                                                                                 |
+| Verification commands actually run    | `dotnet build`, `dotnet test`                                                                                                                                                                                                                                                            | `dotnet build`, `dotnet test`                                                                                                                                                                                        |
+| Questions it asked you                | None                                                                                                                                                                                                                                                                                     | Asked about open questions in the plan                                                                                                                                                                               |
+| Deviations recorded in writing        | None                                                                                                                                                                                                                                                                                     | Recorded the discrepancies between assumptions in the plan and user decisions. Recorded the actual place for package management different from the plan. Recorded the requirement for Step 2 in Step 1 out-of-order. |
 
 Then the diff-off — run both and paste the stats:
 
 ```
 git diff <base>..lab-3-baseline --stat
+
+ .claude/skills/implement-plan/SKILL.md             |  50 ------
+ .../implement-plan/references/execution-rules.md   |  27 ---
+ .../skills/implement-plan/references/when-stuck.md |  32 ----
+ Directory.Packages.props                           |   1 +
+ .../JsonArgumentPreprocessorTests.cs               | 199 +++++++++++++++++++++
+ src/System.CommandLine/ParserConfiguration.cs      |  18 ++
+ .../Parsing/CommandLineParser.cs                   |   5 +
+ .../Parsing/JsonArgumentPreprocessor.cs            | 110 ++++++++++++
+ src/System.CommandLine/System.CommandLine.csproj   |   1 +
+ 9 files changed, 334 insertions(+), 109 deletions(-)
+
 git diff <base>..lab-3-feature --stat
+
+ Directory.Packages.props                           |   1 +
+ docs/ai/plan-json-args-input.md                    |   9 +-
+ .../ParserTests.JsonInput.cs                       | 130 +++++++++++++++++
+ .../Parsing/CommandLineParser.cs                   |  11 ++
+ .../Parsing/JsonArgsPreprocessor.cs                | 158 +++++++++++++++++++++
+ src/System.CommandLine/System.CommandLine.csproj   |   1 +
+ 6 files changed, 306 insertions(+), 4 deletions(-)
+
 ```
 
 ## Part C — Open the hood
