@@ -4,14 +4,15 @@ Thirty minutes, once. Everything below must work before Lab 1 Part A, because La
 
 ## What you need
 
-| Thing | Check | Notes |
-|-------|-------|-------|
-| Python 3.11+ | `python3 --version` | macOS system Python is 3.9 — use `uv venv -p 3.12` or a pyenv/Homebrew install |
-| Node 18+ | `node --version` | Only for the OpenSpec CLI |
-| git | `git --version` | |
-| Claude Code | `claude --version` | Authenticated, as in Week 2 |
-| A DIAL API key | from your instructor or the DIAL portal | Personal. Treat it like a password |
-| Two deployment names | from the same place | One default (an OpenAI-family model such as `gpt-4o`), one from **another vendor** for labs 4 and 5 |
+| Thing                | Check                                   | Notes                                                                                               |
+| -------------------- | --------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Python 3.11+         | `python3 --version`                     | macOS system Python is 3.9 — use `uv venv -p 3.12` or a pyenv/Homebrew install                      |
+| Node 18+             | `node --version`                        | Only for the OpenSpec CLI                                                                           |
+| git                  | `git --version`                         |                                                                                                     |
+| Claude Code          | `claude --version`                      | Authenticated, as in Week 2                                                                         |
+| A DIAL API key       | from your instructor or the DIAL portal | Personal. Treat it like a password                                                                  |
+| Two deployment names | from the same place                     | One default (an OpenAI-family model such as `gpt-4o`), one from **another vendor** for labs 4 and 5 |
+|                      |                                         |                                                                                                     |
 
 ⚠️ **Your code, your call** — Week 2 ground rule 6 still applies. DIAL is EPAM's internal gateway, which is why this week uses it; the PRD in this pack is fictional, so there's nothing to clear.
 
@@ -23,7 +24,7 @@ uv venv -p 3.12 && source .venv/bin/activate           # or: python3.12 -m venv 
 pip install "langchain>=1.4,<2" "langchain-openai>=1.6,<2" "pydantic>=2.7" python-dotenv pytest
 pip freeze > requirements.txt
 printf '.env\n.venv/\n__pycache__/\n.pytest_cache/\nout/\n' > .gitignore
-mkdir prd && cp <this-pack>/prd-notification-policy.md prd/notification-policy-prd.md
+mkdir prd && cp <this-pack>/prd-notification-policy.md prd/notification-policy-prd.md'
 ```
 
 The version pins matter. LangChain 1.x is a different library from what most training data describes; `reference-langchain-map.md` exists because of that.
