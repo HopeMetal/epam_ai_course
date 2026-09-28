@@ -1,66 +1,24 @@
 {
   "main": {
-    "id": "9954cef6598e80ba",
+    "id": "5d82545fa0b1eead",
     "type": "split",
     "children": [
       {
-        "id": "87b52469b65a5ae1",
+        "id": "44110aa27868e11d",
         "type": "tabs",
         "children": [
           {
-            "id": "3c9924781176bf89",
+            "id": "ff35ede0cb90d883",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "student-pack/lab-3-implementing-a-small-feature.md",
+                "file": "week-3/setup.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "lab-3-implementing-a-small-feature"
-            }
-          },
-          {
-            "id": "6f64ac8bca8c6ac7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "student-pack/solutions/lab-3-openspec.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "lab-3-openspec"
-            }
-          },
-          {
-            "id": "8f8d2e4da4682b17",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "student-pack/solutions/lab-2.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "lab-2"
-            }
-          },
-          {
-            "id": "27de12fb3c393b47",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "student-pack/reference-agentic-patterns.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "reference-agentic-patterns"
+              "title": "setup"
             }
           }
         ]
@@ -69,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "9abbf049e02fb4bf",
+    "id": "d8cab5a32768b8ae",
     "type": "split",
     "children": [
       {
-        "id": "083f16af6694a6e4",
+        "id": "b3a6e3f049dd1ced",
         "type": "tabs",
         "children": [
           {
-            "id": "00f914b04cf7ca8e",
+            "id": "02293658cd2089e3",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -92,7 +50,7 @@
             }
           },
           {
-            "id": "3bf5a6b90571b766",
+            "id": "e7323b3aae8dc50f",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -109,7 +67,7 @@
             }
           },
           {
-            "id": "844a21c2e533427a",
+            "id": "97ce7d33b99f051f",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -128,19 +86,20 @@
     "width": 300
   },
   "right": {
-    "id": "46a7c1383d38772f",
+    "id": "4668c5f74cacf1f1",
     "type": "split",
     "children": [
       {
-        "id": "152e5c72400a9f5c",
+        "id": "e1de63f66767be63",
         "type": "tabs",
         "children": [
           {
-            "id": "1b8fef10906ce60a",
+            "id": "19f44c67e2199b88",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "week-3/setup.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,7 +113,7 @@
             }
           },
           {
-            "id": "57f86017fb3d712d",
+            "id": "528c94ac64c8781f",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -167,7 +126,7 @@
             }
           },
           {
-            "id": "f263f12e50d21c05",
+            "id": "524e557c5287aaf7",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -182,7 +141,7 @@
             }
           },
           {
-            "id": "3cdde49cac86c5d4",
+            "id": "079506102e4f4ab4",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -196,12 +155,11 @@
             }
           },
           {
-            "id": "2a4f8c142c479d7b",
+            "id": "72a48398bb56fe03",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "student-pack/lab-3-implementing-a-small-feature.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -211,7 +169,7 @@
             }
           },
           {
-            "id": "811758ce26222895",
+            "id": "64c3161fed8ea364",
             "type": "leaf",
             "state": {
               "type": "git-view",
@@ -225,8 +183,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -240,20 +197,8 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3c9924781176bf89",
+  "active": "ff35ede0cb90d883",
   "lastOpenFiles": [
-    "student-pack/solutions/lab-3.md",
-    "student-pack/lab-3-implementing-a-small-feature.md",
-    "student-pack/solutions/lab-3-openspec.md",
-    "student-pack/solutions/lab-2.md",
-    "student-pack/reference-agentic-patterns.md",
-    "student-pack/solutions/lab-1.md",
-    "student-pack/lab-1-explaining-repo-structure.md",
-    "student-pack/lab-2-implementation-planning.md",
-    "student-pack/solutions/plan-json-args-input.md",
-    "student-pack/lab-4-implementing-tests.md",
-    "2026-09-24.md",
-    "student-pack/solutions/repo-map.md",
-    "student-pack/choosing-your-repo.md"
+    "week-3/lab-1-first-stage-spec-first.md"
   ]
 }
