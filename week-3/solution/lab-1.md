@@ -54,6 +54,7 @@ Did not find open questions.
 # Reflect
 
 1. Spec
+<<<<<<< HEAD
 2. Tests and touched files. Comprehensive testing is vital for any software so having those in the spec is important for longer projects. A high number of touched files increases the size of the project which raises the difficulty of additional changes later on.
 3. The token usage in Logging.
 
@@ -238,3 +239,7 @@ if __name__ == "__main__":
 
     main()
 ```
+=======
+2. Tests or touched files.
+3. The token usage in Logging.
+>>>>>>> origin/main

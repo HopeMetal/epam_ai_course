@@ -64,6 +64,20 @@
             }
           },
           {
+            "id": "b3b4accb4bda14d6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "conflict-files-obsidian-git"
+            }
+          },
+          {
             "id": "1bb966c950b60e29",
             "type": "leaf",
             "state": {
@@ -78,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -254,42 +268,42 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "44d19fd5aec475b3",
+  "active": "b3b4accb4bda14d6",
   "lastOpenFiles": [
-    "week-3/prd-pipeline/out/baseline-one-shot.md",
-    "week-3/solution/lab-1.md",
-    "week-3/prd-pipeline/pipeline.py",
-    "week-3/prd-pipeline/src/prd_pipeline/stages/requirements/writer.py",
-    "week-3/prd-pipeline/src/prd_pipeline/stages/requirements/__init__.py",
+    "week-3/prd-pipeline/openspec/changes/archive/2026-09-28-add-requirements-stage/specs/requirements-stage/spec.md",
+    "week-3/prd-pipeline/openspec/changes/add-architecture-and-test-stages/specs/test-design-stage/spec.md",
+    "week-3/prd-pipeline/openspec/changes/add-architecture-and-test-stages/specs/design-pipeline/spec.md",
+    "week-3/prd-pipeline/openspec/changes/add-architecture-and-test-stages/specs/architecture-stage/spec.md",
     "week-3/prd-pipeline/src/prd_pipeline/stages/requirements/models.py",
     "week-3/prd-pipeline/src/prd_pipeline/stages/requirements/stage.py",
     "week-3/prd-pipeline/src/prd_pipeline/stages/__init__.py",
     "week-3/prd-pipeline/openspec/specs/requirements-stage/spec.md",
+    "week-3/prd-pipeline/openspec/changes/archive/2026-09-28-add-requirements-stage/design.md",
+    "week-3/prd-pipeline/src/prd_pipeline/stages/requirements/__init__.py",
+    "week-3/prd-pipeline/openspec/changes/archive/2026-09-28-add-requirements-stage/proposal.md",
+    "week-3/prd-pipeline/openspec/changes/add-architecture-and-test-stages/design.md",
+    "week-3/prd-pipeline/openspec/changes/add-architecture-and-test-stages/proposal.md",
+    "week-3/prd-pipeline/openspec/changes/add-architecture-and-test-stages/tasks.md",
     "week-3/prd-pipeline/src/prd_pipeline.egg-info/dependency_links.txt",
     "week-3/prd-pipeline/src/prd_pipeline.egg-info/PKG-INFO",
     "week-3/prd-pipeline/src/prd_pipeline.egg-info/SOURCES.txt",
     "week-3/prd-pipeline/src/prd_pipeline.egg-info/top_level.txt",
+    "week-3/prd-pipeline/src/prd_pipeline/llm.py",
+    "week-3/prd-pipeline/src/prd_pipeline/__init__.py",
     "week-3/prd-pipeline/openspec/changes/archive/2026-09-28-add-requirements-stage/tasks.md",
-    "week-3/prd-pipeline/openspec/changes/archive/2026-09-28-add-requirements-stage/specs/requirements-stage/spec.md",
-    "week-3/prd-pipeline/openspec/changes/archive/2026-09-28-add-requirements-stage/proposal.md",
-    "week-3/prd-pipeline/openspec/changes/archive/2026-09-28-add-requirements-stage/design.md",
+    "week-3/solution/lab-1.md",
+    "conflict-files-obsidian-git.md",
+    "week-3/prd-pipeline/out/baseline-one-shot.md",
     "week-3/lab-1-first-stage-spec-first.md",
     "week-3/setup.md",
-    "week-3/prd-pipeline/openspec/changes/add-architecture-and-test-stages/tasks.md",
-    "week-3/prd-pipeline/openspec/changes/add-architecture-and-test-stages/proposal.md",
-    "week-3/prd-pipeline/openspec/changes/add-architecture-and-test-stages/design.md",
-    "week-3/prd-pipeline/openspec/changes/add-architecture-and-test-stages/specs/architecture-stage/spec.md",
     "week-3/solution/lab-1-baseline-grep.md",
     "week-3/lab-2-chaining-stages.md",
-    "week-3/prd-pipeline/openspec/changes/add-architecture-and-test-stages/specs/design-pipeline/spec.md",
-    "week-3/prd-pipeline/openspec/changes/add-architecture-and-test-stages/specs/test-design-stage/spec.md",
     "week-3/lab-3-the-coder-agent.md",
     "week-2/student-pack/lab-2-implementation-planning.md",
     "week-3/reference-langchain-map.md",
     "week-2/student-pack/solutions/lab-3-openspec.md",
     "week-3/prd-pipeline/out/requirements.md",
     "week-3/prd-pipeline/openspec/changes/add-requirements-stage/tasks.md",
-    "week-3/prd-pipeline/openspec/changes/add-requirements-stage/design.md",
-    "week-3/prd-pipeline/openspec/changes/add-requirements-stage/specs/requirements-stage/spec.md"
+    "week-3/prd-pipeline/openspec/changes/add-requirements-stage/design.md"
   ]
 }
