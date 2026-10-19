@@ -54,5 +54,187 @@ Did not find open questions.
 # Reflect
 
 1. Spec
-2. Tests or touched files.
+2. Tests and touched files. Comprehensive testing is vital for any software so having those in the spec is important for longer projects. A high number of touched files increases the size of the project which raises the difficulty of additional changes later on.
 3. The token usage in Logging.
+
+# Baseline code
+
+```python
+"""Pipeline — Stage 1: PRD → structured requirements."""
+
+  
+
+import json
+
+import os
+
+from pathlib import Path
+
+from typing import List, Optional
+
+  
+
+from dotenv import load_dotenv
+
+from langchain_openai import AzureChatOpenAI
+
+from pydantic import BaseModel, Field
+
+  
+
+load_dotenv()
+
+  
+
+PRD_PATH = Path("prd/notification-policy.md")
+
+OUT_PATH = Path("out/requirements.json")
+
+  
+  
+
+class Requirement(BaseModel):
+
+    id: str = Field(description="Identifier such as FR-1 or NFR-2")
+
+    title: str = Field(description="Short noun-phrase title")
+
+    description: str = Field(description="Full requirement text")
+
+    acceptance_criteria: Optional[List[str]] = Field(
+
+        default=None,
+
+        description="Concrete, testable criteria if determinable from the PRD",
+
+    )
+
+  
+  
+
+class AcceptanceExample(BaseModel):
+
+    id: str
+
+    scenario: str
+
+    expected_action: str
+
+    channel: Optional[str] = None
+
+    reason_code: Optional[str] = None
+
+  
+  
+
+class StructuredRequirements(BaseModel):
+
+    product_name: str
+
+    version: str
+
+    goals: List[str]
+
+    non_goals: List[str]
+
+    functional_requirements: List[Requirement]
+
+    non_functional_requirements: List[Requirement]
+
+    acceptance_examples: List[AcceptanceExample]
+
+    open_questions: List[str]
+
+  
+  
+
+SYSTEM_PROMPT = (
+
+    "You are a requirements analyst. Extract all requirements from the provided "
+
+    "Product Requirements Document into the structured format exactly as specified. "
+
+    "Preserve every functional and non-functional requirement, goal, non-goal, "
+
+    "acceptance example, and open question. Do not invent or omit anything."
+
+)
+
+  
+  
+
+def build_llm() -> AzureChatOpenAI:
+
+    return AzureChatOpenAI(
+
+        azure_endpoint=os.environ["DIAL_URL"],
+
+        azure_deployment=os.environ["DIAL_DEPLOYMENT"],
+
+        api_key=os.environ["DIAL_API_KEY"],
+
+        api_version=os.environ["DIAL_API_VERSION"],
+
+        temperature=0,
+
+    )
+
+  
+  
+
+def extract_requirements(prd_text: str) -> StructuredRequirements:
+
+    llm = build_llm()
+
+    structured_llm = llm.with_structured_output(StructuredRequirements)
+
+    messages = [
+
+        ("system", SYSTEM_PROMPT),
+
+        ("human", f"PRD to analyse:\n\n{prd_text}"),
+
+    ]
+
+    return structured_llm.invoke(messages)
+
+  
+  
+
+def main() -> None:
+
+    prd_text = PRD_PATH.read_text(encoding="utf-8")
+
+  
+
+    print(f"Reading PRD from {PRD_PATH} …")
+
+    result = extract_requirements(prd_text)
+
+  
+
+    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    OUT_PATH.write_text(
+
+        json.dumps(result.model_dump(), indent=2, ensure_ascii=False),
+
+        encoding="utf-8",
+
+    )
+
+  
+
+    fr = len(result.functional_requirements)
+
+    nfr = len(result.non_functional_requirements)
+
+    print(f"Written {OUT_PATH}  ({fr} functional, {nfr} non-functional requirements)")
+
+  
+  
+
+if __name__ == "__main__":
+
+    main()
+```

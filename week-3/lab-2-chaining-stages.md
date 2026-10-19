@@ -28,15 +28,15 @@ Run it: `python -m prd_pipeline design`. It will ask you the PRD's open question
 
 ### Worksheet
 
-| Signal | One-shot (Part A) | Staged pipeline |
-|--------|-------------------|-----------------|
-| Test cases produced | | |
-| Cite an existing requirement ID | | |
-| Cite a non-existent ID — caught by whom? | | |
-| Cover no requirement at all (**Invented**) | | |
-| Requirements with zero tests | | |
-| Tokens | | |
-| Open questions surfaced *before* design started | n/a | |
+| Signal                                          | One-shot (Part A)                                                                                      | Staged pipeline |
+| ----------------------------------------------- | ---------------------------------------------------------------------------------------------------- | --------------- |
+| Test cases produced                                                                                                                                      |                 |
+| Cite an existing requirement ID                                                                                                                          |                 |
+| Cite a non-existent ID — caught by whom?                                                                                                                 |                 |
+| Cover no requirement at all (**Invented Not invented per se, but TC-NF.2 and TC-5.3 test for things their cited requirements do not describe  and   but  |                 |
+| Requirements with zero tests                                                                                                                             |                 |
+| Tokens                                                                                                                                                   |                 |
+| Open questions surfaced *before* desi                                                                                                                    |                 |
 
 ## Part C — Open the hood
 
